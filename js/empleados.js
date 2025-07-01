@@ -33,3 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+async function obtenerEmpleados() {
+    try {
+        const res = await fetch('http://localhost:3000/employee');
+        const data = await res.json();
+        const employeeTable = document.getElementById('employeeTable');
+        table.innerHTML = '<tr><th>ID</th><th>Nombre</th><th>Identificacion</th></tr>' +
+      data.map(employee => `<tr><td>${employee.id}</td><td>${employee.name}</td><td>${employee.document}</td></tr>`).join('');
+    } catch (error) {
+        console.error(error)
+    }
+}
