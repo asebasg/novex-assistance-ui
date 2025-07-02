@@ -14,16 +14,16 @@ body {
 
 .titulo-principal {
   font-size: 1.5rem;
-  padding: auto;
+  margin: 0;
 }
 
 .subtitulo {
   font-size: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 .barra-navegacion {
   background-color: #212529;
-
 }
 
 .menu {
