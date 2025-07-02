@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="es-CO">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empleados</title>
+    <link rel="stylesheet" href="../css/empleados.css">
 </head>
-<body>
-    <form action="" id="create-employee">
-        <h3>Crear empleado</h3>
-        <div>
-            <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" placeholder="Nombre" required>
-        </div>
-        <div>
-            <label for="document">Documento</label>
-            <input type="number" name="document" id="document" placeholder="Documento" required>
-        </div>
-        <div>
-            <label for="note">Nota (opcional)</label>
-            <input type="text" name="note" id="note" placeholder="Nota">
-        </div>
-        <button type="submit">Crear</button>
-    </form>
-    <script src="../js/empleados.js"></script>
 
-    <h2>Obtener todos los empleados</h2>
-    <button class="get-employees" onclick="obtenerEmpleados()">
-        Obtener empleados
-    </button>
-    <table id="employeeTable"></table>
+<body>
+    <main>
+        <form action="" id="create-employee">
+            <h1>Crear empleado</h1>
+            <div class="label-name">
+                <label for="name" class="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Ingresa el nombre del trabajador" required>
+            </div>
+            <div class="label-document">
+                <label for="document" class="document">Documento</label>
+                <input type="number" name="document" id="document" placeholder="Ingresa el documento del trabajador"
+                    min="1" max="9999999999" required>
+            </div>
+            <div class="label-note">
+                <label for="note" class="note">Nota (opcional)</label>
+                <input type="textarea" name="note" id="note" placeholder="Ingresa una nota para el trabajador">
+            </div>
+            <button type="submit" class="submit-button">Crear empleado</button>
+        </form>
+
+        <div class="obtener-empleados">
+            <h2>Obtener todos los empleados</h2>
+            <p>Para obtener a todos los empleados, presiona el siguiente boton.</p>
+            <button class="get-employees-button" onclick="obtenerEmpleados()">
+                Obtener empleados
+            </button>
+            <table id="employeeTable">
+                <!-- Aqui se mostrarán los empleados desde el empleado.js -->
+            </table>
+        </div>
+        <script src="../js/empleados.js"></script>
+
+        <div class="actualizar-empleados">
+            <h2>Actualizar empleados</h2>
+            <p>Para actualizar un empleado, ingresa los nuevos datos en los siguientes campos y presiona el botón correspondiente.</p>
+            <div class="form-labels">
+                <label for="update-name">Nombre del empleado</label>
+                <input type="text" name="update-name" id="update-name" placeholder="Nuevo nombre del empleado">
+            </div>
+            <div class="form-labels">
+                <label for="update-document">Documento</label>
+                <input type="number" name="update-document" id="update-document" placeholder="Nuevo documento" min="1" max="9999999999">
+            </div>
+            <div class="form-labels">
+                <label for="update-note">Nota (opcional)</label>
+                <input type="text" name="update-note" id="update-note" placeholder="Nueva nota para el empleado">
+            </div>
+        </div>
+    </main>
+
 </body>
+
 </html>

@@ -1,0 +1,131 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  margin: 1.8rem;
+}
+
+/* Formulario */
+#create-employee {
+  display: block;
+  margin: 10px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+#create-employee h1 {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: 1px solid rgb(187, 186, 186);
+  border-radius: 4px;
+  margin: 10px 20px;
+  padding: 7px 13px;
+}
+
+input::placeholder {
+  color: rgb(160, 160, 160);
+  font-weight: 500;
+}
+
+div {
+  display: block;
+}
+
+#name {
+  display: flex;
+  flex: 1;
+  width: 50%;
+}
+
+#document {
+  display: flex;
+  flex: 1;
+  width: 50%;
+}
+
+#note {
+  display: flex;
+  flex: 1;
+  width: 50%;
+}
+
+label {
+  margin: 5px;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.submit-button {
+  border: 1px solid rgb(209, 209, 208);
+  border-radius: 5px;
+  background-color: rgb(209, 209, 208);
+  padding: 5px 15px;
+  margin: 17px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: rgb(175, 175, 175);
+  transition: all 0.5s ease;
+}
+
+/* Obtener empleados */
+
+.obtener-empleados {
+  display: block;
+  background-color: #f8f8f8;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.get-employees-button {
+  display: flex;
+  border: 1px solid rgb(209, 209, 208);
+  border-radius: 4px;
+  background-color: rgb(209, 209, 208);
+  padding: 5px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.get-employees-button:hover {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: rgb(175, 175, 175);
+  transition: all 0.5s ease;
+}
+
+/* Estilos de las tablas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}

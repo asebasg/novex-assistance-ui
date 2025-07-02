@@ -41,11 +41,11 @@ async function obtenerEmpleados() {
       const res = await fetch("http://localhost:3000/employee");
       const data = await res.json();
       employeeTable.innerHTML =
-        "<tr><th>ID</th><th>Nombre</th><th>Identificación</th></tr>" +
+        "<tr><th>ID</th><th>Nombre</th><th>Identificación</th><th>Nota</th></tr>" +
         data
           .map(
             (employee) =>
-              `<tr><td>${employee.id}</td><td>${employee.name}</td><td>${employee.document}</td></tr>`
+              `<tr><td>${employee.id}</td><td>${employee.name}</td><td>${employee.document}</td><td>${employee.note}</td></tr>`
           )
           .join("");
     } catch (error) {
