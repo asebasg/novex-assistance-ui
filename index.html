@@ -1,44 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Novex Assistance</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/index.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Asistencias</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+    .navbar {
+      background: #2d3e50;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar .links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .navbar .links a:hover {
+      color: #ffd700;
+    }
+    .container {
+      display: flex;
+      min-height: 90vh;
+    }
+    .sidebar {
+      background: #fff;
+      width: 260px;
+      padding: 2rem 1rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sidebar img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #2d3e50;
+    }
+    .sidebar .nombre {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .sidebar .cargo {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+    }
+    .bienvenida {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #2d3e50;
+      font-weight: bold;
+    }
+    .cards {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5rem;
+      flex: 1 1 250px;
+      min-width: 250px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+    .card h3 {
+      margin: 0 0 1rem 0;
+      color: #2d3e50;
+    }
+    .card p {
+      color: #555;
+      margin: 0 0 1rem 0;
+    }
+    .card a {
+      color: #2d3e50;
+      text-decoration: underline;
+      font-weight: bold;
+      margin-top: auto;
+    }
+  </style>
 </head>
 <body>
-
-  <header class="encabezado">
-    <h1 class="titulo-principal">Novex Assistance</h1>
-    <p class="subtitulo">¡Lleva un registro dinámico de asistencias!</p>
-  </header>
-
-  <nav class="barra-navegacion">
-    <ul class="menu">
-      <li><a href="empleado.html" class="enlace activo">Empleado</a></li>
-      <li><a href="reportes.html" class="enlace">Reportes</a></li>
-      <li><a href="asistencias.html" class="enlace">Asistencias</a></li>
-    </ul>
+  <nav class="navbar">
+    <div class="logo">
+      <strong>Gestor de Asistencias</strong>
+    </div>
+    <div class="links">
+      <a href="#">Empleados</a>
+      <a href="#">Reportes</a>
+      <a href="#">Asistencias</a>
+    </div>
   </nav>
-
-  <main class="contenido-principal">
-    <aside class="barra-lateral">
-      <h2 class="seccion-titulo">Sobre Mí</h2>
-      <div class="imagen-falsa">Imagen</div>
-      <p class="descripcion">Un poco de texto sobre mí...</p>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Foto de usuario">
+      <div class="nombre">Juan Esteban Garcia</div>
+      <div class="cargo">Jefe de Recursos Humanos</div>
     </aside>
-
-    <section class="seccion">
-      <h2 class="seccion-titulo">EMPLEADO</h2>
-      <div class="imagen-falsa">Imagen</div>
-      <p>Contenido de la sección...</p>
-    </section>
-  </main>
-
-  <footer class="pie-pagina">
-    <p>© 2025 Novex Assistance. Todos los derechos reservados.</p>
-  </footer>
-
+    <main class="main-content">
+      <div class="bienvenida">
+        ¡Bienvenido, Juan! Gestiona las asistencias de tu equipo de manera eficiente.
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Empleados</h3>
+          <p>Visualiza, agrega o edita la información de tus empleados. Mantén tu equipo actualizado.</p>
+          <a href="#">Ir a Empleados</a>
+        </div>
+        <div class="card">
+          <h3>Reportes</h3>
+          <p>Genera y descarga reportes de asistencia, puntualidad y desempeño de tu equipo.</p>
+          <a href="#">Ver Reportes</a>
+        </div>
+        <div class="card">
+          <h3>Asistencias</h3>
+          <p>Registra y controla las asistencias diarias de los empleados. Gestiona incidencias fácilmente.</p>
+          <a href="#">Gestionar Asistencias</a>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
