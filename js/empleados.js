@@ -51,6 +51,7 @@ async function obtenerEmpleados() {
     } catch (error) {
       console.error(error);
       employeeTable.innerHTML = '<tr><td colspan="3">Error al cargar empleados</td></tr>';
+      employeeTable.style.backgroundColor = 'rgba(220, 53, 70, 0.4)';
     }
   }
 }

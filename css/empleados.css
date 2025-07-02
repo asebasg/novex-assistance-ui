@@ -20,16 +20,17 @@ main {
 #create-employee h1 {
   display: flex;
   justify-content: center;
+  font-weight: 700;
 }
 
-input {
+input, textarea {
   border: 1px solid rgb(187, 186, 186);
   border-radius: 4px;
   margin: 10px 20px;
   padding: 7px 13px;
 }
 
-input::placeholder {
+input,textarea::placeholder {
   color: rgb(160, 160, 160);
   font-weight: 500;
 }
