@@ -59,60 +59,81 @@ async function obtenerEmpleados() {
   }
 }
 
-/*
+// Asociar eventos a los formularios de actualizar y eliminar empleados
+document.addEventListener("DOMContentLoaded", () => {
+  // ...existing code for create employee...
+
+  // Actualizar empleado
+  const updateForm = document.getElementById("update-employee-form");
+  if (updateForm) {
+    updateForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      await actualizarEmpleado();
+    });
+  }
+
+  // Eliminar empleado
+  const deleteForm = document.getElementById("delete-employee-form");
+  if (deleteForm) {
+    deleteForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      await eliminarEmpleado();
+    });
+  }
+});
+
+// Actualizar empleado
 async function actualizarEmpleado() {
-  const id = document.querySelector('.actualizar-empleados #id-empleado').value.trim();
-  const name = document.querySelector('.actualizar-empleados input[name="name"]').value.trim();
-  const documentValue = document.querySelector('.actualizar-empleados input[name="document"]').value.trim();
-  const note = document.querySelector('.actualizar-empleados textarea[name="note"]').value.trim();
+  const id = document.getElementById("update-id").value.trim();
+  const name = document.getElementById("update-name").value.trim();
+  const documentValue = document.getElementById("update-document").value.trim();
+  const note = document.getElementById("update-note").value.trim();
 
   if (!id) {
-    alert('Por favor ingresa la ID del empleado a actualizar.');
+    alert("Por favor ingresa la ID del empleado a actualizar.");
     return;
   }
 
-  const data = {
-    name,
-    document: parseInt(documentValue, 10),
-    note: note !== "" ? note : undefined,
-  };
+  const data = {};
+  if (name) data.name = name;
+  if (documentValue) data.document = parseInt(documentValue, 10);
+  if (note) data.note = note;
 
   try {
     const response = await fetch(`http://localhost:3000/employee/${id}`, {
-      method: 'PUT',
+      method: "PATCH",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
     if (!response.ok) {
-      throw new Error('Error al actualizar el empleado');
+      throw new Error("Error al actualizar el empleado");
     }
-    alert('Empleado actualizado con éxito');
+    alert("Empleado actualizado con éxito");
   } catch (error) {
     alert(error.message);
   }
 }
 
+// Eliminar empleado
 async function eliminarEmpleado() {
-  const id = document.querySelector('.eliminar-empleados #id-empleado').value.trim();
+  const id = document.getElementById("delete-id").value.trim();
 
   if (!id) {
-    alert('Por favor ingresa la ID del empleado a eliminar.');
+    alert("Por favor ingresa la ID del empleado a eliminar.");
     return;
   }
 
   try {
     const response = await fetch(`http://localhost:3000/employee/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
     if (!response.ok) {
-      throw new Error('Error al eliminar el empleado');
+      throw new Error("Error al eliminar el empleado");
     }
-    alert('Empleado eliminado con éxito');
+    alert("Empleado eliminado con éxito");
   } catch (error) {
     alert(error.message);
   }
 }
-
-*/

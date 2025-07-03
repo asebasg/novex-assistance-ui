@@ -55,40 +55,38 @@
 
         <div class="actualizar-empleados">
             <h2>Actualizar empleados</h2>
-            <p>Para actualizar un empleado, ingresa los nuevos datos en los siguientes campos y presiona el botón
-                correspondiente.</p>
-            <div class="form-labels">
-                <label for="id" class="id" id="id-empleado">ID del usuario</label>
-                <input type="number" name="id" id="id-empleado" placeholder="Ingresa la ID del trabajador" min="1"
-                    max="999" required>
-            </div>
-            <div class="form-labels">
-                <label for="name" class="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Ingresa el nombre del trabajador" required>
-            </div>
-            <div class="form-labels">
-                <label for="document" class="document">Documento</label>
-                <input type="number" name="document" id="document" placeholder="Ingresa el documento del trabajador"
-                    min="1" max="9999999999" required>
-            </div>
-            <div class="form-labels">
-                <label for="note" class="note">Nota (opcional)</label>
-                <textarea name="note" id="note" placeholder="Ingresa una nota para el trabajador" rows="3"></textarea>
-            </div>
-            <button class="submit-button" onclick="actualizarEmpleado()">
-                Actualizar empleado
-            </button>
+            <p>Para actualizar un empleado, ingresa los nuevos datos en los siguientes campos y presiona el botón correspondiente.</p>
+            <form id="update-employee-form">
+                <div class="form-labels">
+                    <label for="update-id" class="id">ID del usuario</label>
+                    <input type="number" name="update-id" id="update-id" placeholder="Ingresa la ID del trabajador" min="1" max="999" required>
+                </div>
+                <div class="form-labels">
+                    <label for="update-name" class="name">Nombre</label>
+                    <input type="text" name="update-name" id="update-name" placeholder="Ingresa el nombre del trabajador">
+                </div>
+                <div class="form-labels">
+                    <label for="update-document" class="document">Documento</label>
+                    <input type="number" name="update-document" id="update-document" placeholder="Ingresa el documento del trabajador" min="1" max="9999999999">
+                </div>
+                <div class="form-labels">
+                    <label for="update-note" class="note">Nota (opcional)</label>
+                    <textarea name="update-note" id="update-note" placeholder="Ingresa una nota para el trabajador" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Actualizar empleado</button>
+            </form>
         </div>
 
         <div class="eliminar-empleados">
             <h2>Eliminar empleados</h2>
             <p>Para eliminar un empleado, ingresa la ID del empleado.</p>
             <p>Para conocer la ID del empleado solicitado, puedes mirarla en el apartado de obtener empleado.</p>
-            <div class="form-labels">
-                <label for="id" class="id" id="id-empleado">ID del usuario</label>
-                <input type="number" name="id" id="id-empleado" placeholder="Ingresa la ID del trabajador" min="1"
-                    max="999" required>
-            </div>
+            <form id="delete-employee-form">
+                <div class="form-labels">
+                    <label for="delete-id" class="id">ID del usuario</label>
+                    <input type="number" name="delete-id" id="delete-id" placeholder="Ingresa la ID del trabajador" min="1" max="999" required>
+                </div>
+            </form>
             <button class="submit-button" onclick="eliminarEmpleado()">
                 Eliminar empleado
             </button>
