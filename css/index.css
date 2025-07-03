@@ -1,93 +1,106 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f5f5;
   margin: 0;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
 }
-
-.encabezado {
-  background-color: #0d6efd;
+.navbar {
+  background: #2d3e50;
   color: #fff;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.titulo-principal {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.subtitulo {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.barra-navegacion {
-  background-color: #212529;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem;
-}
-
-.menu li {
-  margin: 0 1rem;
-}
-
-.enlace {
-  color: #f8f9fa;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.enlace:hover {
-  color: #0d6efd;
-}
-
-.activo {
-  color: #0d6efd;
-}
-
-.contenido-principal {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2rem;
-}
-
-.barra-lateral {
-  flex: 1 1 30%;
-  padding: 1rem;
-}
-
-.seccion {
-  flex: 1 1 65%;
-  padding: 1rem;
-}
-
-.seccion-titulo {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.imagen-falsa {
-  height: 200px;
-  background-color: #adb5bd;
-  color: white;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  margin: 1rem 0;
+  justify-content: space-between;
+}
+.navbar .links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.navbar .links a:hover {
+  color: #ffd700;
+}
+.container {
+  display: flex;
+  min-height: 90vh;
+}
+.sidebar {
+  background: #fff;
+  width: 260px;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #2d3e50;
+}
+.sidebar .nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.sidebar .cargo {
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+.bienvenida {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #2d3e50;
+  font-weight: bold;
+}
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem;
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.card h3 {
+  margin: 0 0 1rem 0;
+  color: #2d3e50;
+}
+.card p {
+  color: #555;
+  margin: 0 0 1rem 0;
+}
+.card a {
+  color: #2d3e50;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: auto;
 }
 
-.pie-pagina {
-  background-color: #212529;
-  color: #dee2e6;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 25px;
+  font-size: 13px;
+  font-weight: 200;
+  background-color: #fff;
+  color: #888;
 }
