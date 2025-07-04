@@ -37,6 +37,10 @@ main {
   margin: 1.8rem;
 }
 
+div {
+  display: block;
+}
+
 /* Formulario */
 #create-report {
   display: block;
@@ -130,7 +134,7 @@ label {
   transition: all 0.5s ease;
 }
 
-/* Obtener empleados */
+/* Obtener reportes */
 .obtener-reportes {
   display: block;
   background-color: #f8f8f8;
@@ -161,6 +165,7 @@ tr:nth-child(even) {
   background-color: #fafafa;
 }
 
+/* Actualizar reportes */
 .actualizar-reportes {
   display: block;
   background-color: #f8f8f8;
@@ -169,6 +174,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 
+/* Eliminar reportes */
 .eliminar-reportes {
   display: block;
   background-color: #f8f8f8;
