@@ -85,16 +85,19 @@ async function obtenerAsistencias() {
       attendanceTable.innerHTML =
         "<tr><th>ID asistencia</th><th>ID empleado</th><th>Fecha</th><th>Hora de entrada</th><th>Hora de salida</th><th>Estado de la asistencia</th></tr>" +
         data
-          .map(
-            (attendance) => {
-                let statusClass = "";
-                if(attendance.status === "PRESENT") statusClass = "status-present";
-                else if (attendance.status === "ABSENT") statusClass = "status-absent";
-                else if (attendance.status === "LATE") statusClass = "status-late";
-                else if (attendance.status === "DAY_OFF") statusClass = "status-off";
-                else if (attendance.status === "VACATIONS") statusClass = "status-vacations";            
-                else if (attendance.status === "PERMIT") statusClass = "status-permit";
-                return `<tr>
+          .map((attendance) => {
+            let statusClass = "";
+            if (attendance.status === "PRESENT") statusClass = "status-present";
+            else if (attendance.status === "ABSENT")
+              statusClass = "status-absent";
+            else if (attendance.status === "LATE") statusClass = "status-late";
+            else if (attendance.status === "DAY_OFF")
+              statusClass = "status-off";
+            else if (attendance.status === "VACATIONS")
+              statusClass = "status-vacations";
+            else if (attendance.status === "PERMIT")
+              statusClass = "status-permit";
+            return `<tr>
           <td>${attendance.id}</td>
           <td>${attendance.employeeId}</td>
           <td>${attendance.date}</td>
@@ -102,8 +105,7 @@ async function obtenerAsistencias() {
           <td>${attendance.exitTime}</td>
           <td class="${statusClass}">${attendance.status}</td>
         </tr>`;
-            }
-          )
+          })
           .join("");
     } catch (error) {
       attendanceTable.innerHTML =
@@ -127,10 +129,10 @@ async function actualizarAsistencia() {
   }
 
   const data = {};
-  if (date) data.date = new Date().toISOString();
-  if(entryTime) data.entryTime = new Date().toISOString();
-  if (exitTime) data.exitTime = new Date().toISOString();
-  if (status) data.status = parseInt(status, 10);
+  if (date) data.date = date;
+  if (entryTime) data.entryTime = entryTime;
+  if (exitTime) data.exitTime = exitTime;
+  if (status) data.status = status;
 
   try {
     const response = await fetch(`http://localhost:3000/attendance/${id}`, {
