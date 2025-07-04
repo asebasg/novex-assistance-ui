@@ -179,3 +179,13 @@ tr:nth-child(even) {
 #id-empleado {
   width: 15%;
 }
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 25px;
+  font-size: 13px;
+  font-weight: 200;
+  background-color: #fff;
+  color: #888;
+}

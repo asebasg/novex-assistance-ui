@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="es-CO">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Empleados</title>
-    <link rel="stylesheet" href="../css/empleados.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes de Asistencias</title>
+  <!-- <link rel="stylesheet" href="../css/index.css"> -->
+  <link rel="stylesheet" href="../css/reportes.css">
 </head>
-
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="../"><strong>Novex Assistance</strong></a>
-            <!-- <strong>Novex Assistance</strong> -->
-        </div>
-        <div class="links">
-            <a href="#">Reportes</a>
-            <a href="#">Asistencias</a>
-        </div>
-    </nav>
-    <main>
-        <div class="crear-empleado">
-            <h2>Crear empleado</h2>
-            <p>Para crear un empleado, llena el siguiente formulario</p>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="./"><strong>Novex Assistance</strong></a>
+    </div>
+    <div class="links">
+      <a href="./app/empleados.html">Empleados</a>
+      <a href="./app/asistencias.html">Asistencias</a>
+    </div>
+  </nav>
+  <div class="container">
+    <main class="main-content">
+      <div class="crear-reporte">
+            <h2>Crear reporte</h2>
+            <p>Para crear un reporte, llena el siguiente formulario</p>
             <form action="" id="create-employee">
                 <div class="form-labels">
                     <label for="name" class="name">Nombre</label>
@@ -38,24 +37,24 @@
                     <textarea name="note" id="note" placeholder="Ingresa una nota para el trabajador"
                         rows="3"></textarea>
                 </div>
-                <button type="submit" class="submit-button">Crear empleado</button>
+                <button type="submit" class="submit-button">Crear reporte</button>
             </form>
         </div>
 
-        <div class="obtener-empleados">
-            <h2>Obtener todos los empleados</h2>
-            <p>Para obtener a todos los empleados, presiona el siguiente boton.</p>
-            <button class="submit-button" onclick="obtenerEmpleados()">
-                Obtener empleados
+        <div class="obtener-reportes">
+            <h2>Obtener todos los reportes</h2>
+            <p>Para obtener a todos los reportes, presiona el siguiente boton.</p>
+            <button class="submit-button" onclick="obtenerReportes()">
+                Obtener reportes
             </button>
             <table id="employeeTable">
-                <!-- Aqui se mostrarán los empleados desde el empleado.js -->
+                <!-- Aqui se mostrarán los reportes desde el reportes.js -->
             </table>
         </div>
 
-        <div class="actualizar-empleados">
-            <h2>Actualizar empleados</h2>
-            <p>Para actualizar un empleado, ingresa los nuevos datos en los siguientes campos y presiona el botón
+        <div class="actualizar-reportes">
+            <h2>Actualizar reportes</h2>
+            <p>Para actualizar un reporte, ingresa los nuevos datos en los siguientes campos y presiona el botón
                 correspondiente.</p>
             <form id="update-employee-form">
                 <div class="form-labels">
@@ -78,14 +77,14 @@
                     <textarea name="update-note" id="update-note" placeholder="Ingresa una nota para el trabajador"
                         rows="3"></textarea>
                 </div>
-                <button type="submit" class="submit-button" onclick="actualizarEmpleado()">Actualizar empleado</button>
+                <button type="submit" class="submit-button">Actualizar reporte</button>
             </form>
         </div>
 
-        <div class="eliminar-empleados">
-            <h2>Eliminar empleados</h2>
-            <p>Para eliminar un empleado, ingresa la ID del empleado.</p>
-            <p>Para conocer la ID del empleado solicitado, puedes mirarla en el apartado de obtener empleado.</p>
+        <div class="eliminar-reportes">
+            <h2>Eliminar reportes</h2>
+            <p>Para eliminar un reporte, ingresa la ID del reporte.</p>
+            <p>Para conocer la ID del reporte solicitado, puedes mirarla en el apartado de obtener reporte.</p>
             <form id="delete-employee-form">
                 <div class="form-labels">
                     <label for="delete-id" class="id">ID del usuario</label>
@@ -93,15 +92,14 @@
                         min="1" max="999" required>
                 </div>
             </form>
-            <button class="submit-button" onclick="eliminarEmpleado()">
-                Eliminar empleado
+            <button class="submit-button" onclick="eliminarReporte()">
+                Eliminar reporte
             </button>
         </div>
     </main>
-    <script src="../js/empleados.js"></script>
-    <footer>
-        <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
-    </footer>
+  </div>
+  <footer>
+     <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
+  </footer>
 </body>
-
 </html>
