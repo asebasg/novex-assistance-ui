@@ -37,6 +37,13 @@ main {
   margin: 1.8rem;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: #2d3e50;
+}
+
 div {
   display: block;
 }

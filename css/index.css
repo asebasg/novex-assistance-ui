@@ -68,6 +68,14 @@ body {
   color: #2d3e50;
   font-weight: bold;
 }
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: #2d3e50;
+}
+
 .cards {
   display: flex;
   gap: 2rem;
