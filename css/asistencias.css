@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.navbar .links a:hover {
+  color: #ffd700;
+}
+
+.container {
+  display: flex;
+  min-height: 90vh;
+}
+
+main {
+  margin: 1.8rem;
+}
+
+div {
+  display: block;
+}
+
+/* Estados de asistencia (tabla interactiva)*/
+
+.status-present {
+   background-color: rgba(0, 128, 0, 0.459);
+}
+
+.status-absent {
+    background-color: rgba(255, 0, 0, 0.425);
+}
+
+.status-late {
+    background-color: rgba(255, 255, 0, 0.452);
+}
+
+.status-off {
+    background-color: rgba(255, 174, 0, 0.438);
+}
+
+.status-vacations {
+    background-color: rgba(128, 0, 128, 0.418);
+}
+
+.status-permit {
+    background-color: pink;
+}
