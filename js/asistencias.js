@@ -129,9 +129,11 @@ async function actualizarAsistencia() {
   }
 
   const data = {};
-  if (date) data.date = date;
-  if (entryTime) data.entryTime = entryTime;
-  if (exitTime) data.exitTime = exitTime;
+  if (date) data.date = new Date(date).toISOString();
+  if (date && entryTime)
+    data.entryTime = new Date(`${date}T${entryTime}:00`).toISOString();
+  if (date && exitTime)
+    data.exitTime = new Date(`${date}T${exitTime}:00`).toISOString();
   if (status) data.status = status;
 
   try {
