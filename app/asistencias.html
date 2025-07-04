@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Asistencias</title>
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <link rel="stylesheet" href="../css/reportes.css">
+    <link rel="stylesheet" href="../css/asistencias.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./"><strong>Novex Assistance</strong></a>
+        </div>
+        <div class="links">
+            <a href="../app/empleados.html">Empleados</a>
+            <a href="../app/reportes.html">Reportes</a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <h1>Gestion de asistencias</h1>
+        <div class="crear-asistencia">
+            <h2>Crear asistencia</h2>
+            <p>Para crear una asistencia, llena el siguiente formulario</p>
+            <form id="create-attendance">
+                <div class="form-labels">
+                    <label for="date">Fecha</label>
+                    <input type="date" id="date" name="date" required placeholder="Ingresa la fecha">
+                </div>
+                <div class="form-labels">
+                    <label for="entryTime">Hora de entrada</label>
+                    <input type="time" id="entryTime" name="entryTime" required
+                        placeholder="Ingresa la hora de entrada">
+                </div>
+                <div class="form-labels">
+                    <label for="exitTime">Hora de salida (opcional)</label>
+                    <input type="time" id="exitTime" name="exitTime" placeholder="Ingresa la hora de salida">
+                </div>
+                <div class="form-labels">
+                    <label for="status">Estado de la asistencia</label>
+                    <select name="status" id="status">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="PRESENT">Presente</option>
+                        <option value="ABSENT">Ausente</option>
+                        <option value="LATE">Tarde</option>
+                        <option value="DAY_OFF">Dia libre</option>
+                        <option value="VACATIONS">Vacaciones</option>
+                        <option value="PERMIT">Permiso</option>
+                    </select>
+                </div>
+                <div class="form-labels">
+                    <label for="employeeId">ID del empleado</label>
+                    <input type="number" id="employeeId" name="employeeId" min="1" max="999" required
+                        placeholder="Ingresa la ID del empleado">
+                </div>
+                <button type="submit" class="submit-button">Crear asistencia</button>
+            </form>
+        </div>
+        <div class="obtener-asistencias">
+            <h2>Obtener todas las asistencias</h2>
+            <p>Para obtener todas las asistencias, presiona el siguiente boton</p>
+            <button class="submit-button" id="get-attendances-btn">
+                Obtener asistencias
+            </button>
+            <table id="attendanceTable">
+                <!-- Aqui se mostraran las asistencias desde asistencias.js -->
+            </table>
+        </div>
+        <div class="actualizar-asistencias">
+            <h2>Actualizar asistencias</h2>
+            <p>Para actualizar una asistencia, ingresa los nuevos datos en los siguientes campos y presiona el botón
+                correspondiente </p>
+            <form id="update-attendance">
+                <div class="form-labels">
+                    <label for="update-id">ID de la asistencia</label>
+                    <input type="number" id="update-id" name="update-id" min="1" max="999" required
+                        placeholder="Ingresa la ID de la asistencia">
+                </div>
+                <div class="form-labels">
+                    <label for="update-date">Fecha</label>
+                    <input type="date" id="update-date" name="update-date" placeholder="Ingresa la fecha">
+                </div>
+                <div class="form-labels">
+                    <label for="update-entrytime">Hora de entrada</label>
+                    <input type="time" id="update-entrytime" name="update-entrytime"
+                        placeholder="Ingresa la hora de entrada">
+                </div>
+                <div class="form-labels">
+                    <label for="update-exittime">Hora de salida</label>
+                    <input type="time" id="update-exittime" name="update-exittime"
+                        placeholder="Ingresa la hora de salida">
+                </div>
+                <div class="form-labels">
+                    <label for="update-status">Estado de la asistencia</label>
+                    <select name="update-status" id="update-status">
+                        <option value="PRESENT">Presente</option>
+                        <option value="ABSENT">Ausente</option>
+                        <option value="LATE">Tarde</option>
+                        <option value="DAY_OFF">Dia libre</option>
+                        <option value="VACATIONS">Vacaciones</option>
+                        <option value="PERMIT">Permiso</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">
+                    Actualizar asistencia
+                </button>
+            </form>
+        </div>
+        <div class="eliminar-asistencias">
+            <h2>Eliminar asistencias</h2>
+            <p>Para eliminar una asistencia, ingresa la ID de la misma</p>
+            <form class="delete-attendance">
+                <div class="form-labels">
+                    <label for="delete-id">ID de la asistencia</label>
+                    <input type="number" id="delete-id" name="delete-id" min="1" max="999" required placeholder="Ingresa la ID de la asistencia">
+                </div>
+                <button type="submit" class="submit-button">
+                    Eliminar asistencia
+                </button>
+            </form>
+        </div>
+    </main>
+    <script src="../js/asistencias.js"></script>
+    <footer>
+        <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
+    </footer>
+</body>
