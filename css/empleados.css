@@ -82,6 +82,12 @@ div {
   display: block;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
 #name {
   display: flex;
   flex: 1;
