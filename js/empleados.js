@@ -1,5 +1,6 @@
-// Crear empleado
+// Asociar eventos a los formularios de crear, actualizar y eliminar
 document.addEventListener("DOMContentLoaded", () => {
+  // Crear empleado
   const form = document.getElementById("create-employee");
   if (form) {
     form.addEventListener("submit", async (e) => {
