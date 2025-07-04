@@ -33,6 +33,154 @@ body {
   min-height: 90vh;
 }
 
+main {
+  margin: 1.8rem;
+}
+
+/* Formulario */
+#create-report {
+  display: block;
+  margin: 10px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #f8f8f8; */
+  border-radius: 10px;
+}
+
+#create-report h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.crear-reporte {
+  display: block;
+  margin: 10px;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+input,
+textarea {
+  border: 1px solid rgb(187, 186, 186);
+  border-radius: 4px;
+  margin: 10px 20px;
+  padding: 7px 13px;
+  color: #000;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(160, 160, 160);
+  font-weight: 500;
+}
+
+div {
+  display: block;
+}
+
+#name, #report-name {
+  display: flex;
+  flex: 1;
+  width: 50%;
+}
+
+#document, #report-document {
+  display: flex;
+  flex: 1;
+  width: 50%;
+}
+
+#note, #report-note {
+  display: flex;
+  flex: 1;
+  width: 50%;
+}
+
+label {
+  margin: 5px;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.form-labels {
+  display: block;
+  padding: 10px;
+}
+
+.submit-button {
+  border: 1px solid #775c81;
+  border-radius: 5px;
+  background-color: #775c81;
+  color: white;
+  padding: 5px 15px;
+  margin: 17px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: #775c81b4;
+  transition: all 0.5s ease;
+}
+
+/* Obtener empleados */
+.obtener-reportes {
+  display: block;
+  background-color: #f8f8f8;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/* Estilos de las tablas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.actualizar-reportes {
+  display: block;
+  background-color: #f8f8f8;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.eliminar-reportes {
+  display: block;
+  background-color: #f8f8f8;
+  margin: 10px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+#id-reporte {
+  width: 15%;
+}
+
 footer {
   display: flex;
   justify-content: flex-end;

@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reportes de Asistencias</title>
-  <!-- <link rel="stylesheet" href="../css/index.css"> -->
-  <link rel="stylesheet" href="../css/reportes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Asistencias</title>
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+    <link rel="stylesheet" href="../css/reportes.css">
 </head>
+
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="./"><strong>Novex Assistance</strong></a>
-    </div>
-    <div class="links">
-      <a href="./app/empleados.html">Empleados</a>
-      <a href="./app/asistencias.html">Asistencias</a>
-    </div>
-  </nav>
-  <div class="container">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./"><strong>Novex Assistance</strong></a>
+        </div>
+        <div class="links">
+            <a href="../app/empleados.html">Empleados</a>
+            <a href="../app/asistencias.html">Asistencias</a>
+        </div>
+    </nav>
     <main class="main-content">
-      <div class="crear-reporte">
+        <div class="crear-reporte">
             <h2>Crear reporte</h2>
             <p>Para crear un reporte, llena el siguiente formulario</p>
-            <form action="" id="create-employee">
+            <form id="create-report">
                 <div class="form-labels">
-                    <label for="name" class="name">Nombre</label>
-                    <input type="text" name="name" id="name" placeholder="Ingresa el nombre del trabajador" required>
+                    <label for="title">Título</label>
+                    <input type="text" id="title" name="title" required placeholder="Título del reporte">
                 </div>
                 <div class="form-labels">
-                    <label for="document" class="document">Documento</label>
-                    <input type="number" name="document" id="document" placeholder="Ingresa el documento del trabajador"
-                        min="1" max="9999999999" required>
+                    <label for="description">Descripción</label>
+                    <textarea id="description" name="description" required
+                        placeholder="Descripción del reporte"></textarea>
                 </div>
                 <div class="form-labels">
-                    <label for="note" class="note">Nota (opcional)</label>
-                    <textarea name="note" id="note" placeholder="Ingresa una nota para el trabajador"
-                        rows="3"></textarea>
+                    <label for="employeeId">ID Empleado</label>
+                    <input type="number" id="employeeId" name="employeeId" required min="1"
+                        placeholder="ID del empleado">
                 </div>
                 <button type="submit" class="submit-button">Crear reporte</button>
             </form>
@@ -44,10 +45,10 @@
         <div class="obtener-reportes">
             <h2>Obtener todos los reportes</h2>
             <p>Para obtener a todos los reportes, presiona el siguiente boton.</p>
-            <button class="submit-button" onclick="obtenerReportes()">
+            <button class="submit-button" id="get-reports-btn">
                 Obtener reportes
             </button>
-            <table id="employeeTable">
+            <table id="reportTable">
                 <!-- Aqui se mostrarán los reportes desde el reportes.js -->
             </table>
         </div>
@@ -56,26 +57,24 @@
             <h2>Actualizar reportes</h2>
             <p>Para actualizar un reporte, ingresa los nuevos datos en los siguientes campos y presiona el botón
                 correspondiente.</p>
-            <form id="update-employee-form">
+            <form id="update-report-form">
                 <div class="form-labels">
-                    <label for="update-id" class="id">ID del usuario</label>
-                    <input type="number" name="update-id" id="update-id" placeholder="Ingresa la ID del trabajador"
-                        min="1" max="999" required>
+                    <label for="update-id">ID del reporte</label>
+                    <input type="number" id="update-id" name="update-id" required min="1" placeholder="ID del reporte">
                 </div>
                 <div class="form-labels">
-                    <label for="update-name" class="name">Nombre</label>
-                    <input type="text" name="update-name" id="update-name"
-                        placeholder="Ingresa el nombre del trabajador">
+                    <label for="update-title">Título</label>
+                    <input type="text" id="update-title" name="update-title" placeholder="Nuevo título">
                 </div>
                 <div class="form-labels">
-                    <label for="update-document" class="document">Documento</label>
-                    <input type="number" name="update-document" id="update-document"
-                        placeholder="Ingresa el documento del trabajador" min="1" max="9999999999">
+                    <label for="update-description">Descripción</label>
+                    <textarea id="update-description" name="update-description"
+                        placeholder="Nueva descripción"></textarea>
                 </div>
                 <div class="form-labels">
-                    <label for="update-note" class="note">Nota (opcional)</label>
-                    <textarea name="update-note" id="update-note" placeholder="Ingresa una nota para el trabajador"
-                        rows="3"></textarea>
+                    <label for="update-employeeId">ID Empleado</label>
+                    <input type="number" id="update-employeeId" name="update-employeeId" min="1"
+                        placeholder="Nuevo ID empleado">
                 </div>
                 <button type="submit" class="submit-button">Actualizar reporte</button>
             </form>
@@ -85,21 +84,19 @@
             <h2>Eliminar reportes</h2>
             <p>Para eliminar un reporte, ingresa la ID del reporte.</p>
             <p>Para conocer la ID del reporte solicitado, puedes mirarla en el apartado de obtener reporte.</p>
-            <form id="delete-employee-form">
+            <form id="delete-report-form">
                 <div class="form-labels">
-                    <label for="delete-id" class="id">ID del usuario</label>
-                    <input type="number" name="delete-id" id="delete-id" placeholder="Ingresa la ID del trabajador"
-                        min="1" max="999" required>
+                    <label for="delete-id">ID del reporte</label>
+                    <input type="number" id="delete-id" name="delete-id" required min="1" placeholder="ID del reporte">
                 </div>
+                <button type="submit" class="submit-button">Eliminar reporte</button>
             </form>
-            <button class="submit-button" onclick="eliminarReporte()">
-                Eliminar reporte
-            </button>
         </div>
     </main>
-  </div>
-  <footer>
-     <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
-  </footer>
+    <script src="../js/reportes.js"></script>
+    <footer>
+        <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
+    </footer>
 </body>
+
 </html>
