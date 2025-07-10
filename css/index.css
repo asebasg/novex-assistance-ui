@@ -113,18 +113,6 @@ body {
   cursor: pointer;
 }
 
-.card button:hover {
-  color: #ffffff;
-  font-weight: 500;
-  margin-top: auto;
-  padding: 0.6rem;
-  border-radius: 4px;
-  border: 1px solid #44515f;
-  background-color: #44515f;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
 footer {
   display: flex;
   justify-content: flex-end;
