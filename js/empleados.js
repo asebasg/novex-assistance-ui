@@ -44,13 +44,23 @@ async function obtenerEmpleados() {
       const res = await fetch("http://localhost:3000/employee");
       const data = await res.json();
       employeeTable.innerHTML =
-        "<tr><th>ID</th><th>Nombre</th><th>Identificación</th><th>Nota</th></tr>" +
+        "<tr><th>ID</th><th>Nombre</th><th>Identificación</th><th>Nota</th><th>Acciones</th></tr>" +
         data
           .map(
             (employee) =>
-              `<tr><td>${employee.id}</td><td>${employee.name}</td><td>${employee.document}</td><td>${employee.note}</td></tr>`
+              // let buttonClass = "";
+              `<tr>
+            <td>${employee.id}</td>
+            <td>${employee.name}</td>
+            <td>${employee.document}</td>
+            <td>${employee.note}</td>
+            <td><button class="btn-edit">Editar empleado</button><button class="btn-delete" data-id="${employee.id}">Eliminar empleado</button></td>
+            
+            </tr>`
           )
           .join("");
+      // Asociar eventos a los botones eliminar después de renderizar la tabla
+      eliminarEmpleadoBoton();
     } catch (error) {
       console.error(error);
       employeeTable.innerHTML =
@@ -60,10 +70,25 @@ async function obtenerEmpleados() {
   }
 }
 
+// Asociar eventos al boton de eliminar
+function eliminarEmpleadoBoton() {
+  const btnDelete = document.querySelectorAll(".btn-delete");
+  btnDelete.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      const confirmacion = confirm("¿Estás seguro de eliminar al empleado?");
+      if (confirmacion) {
+        eliminarEmpleado(id);
+        console.log("Empleado eliminado con exito");
+      } else {
+        alert("Eliminacion cancelada");
+      }
+    });
+  });
+}
+
 // Asociar eventos a los formularios de actualizar y eliminar empleados
 document.addEventListener("DOMContentLoaded", () => {
-  // ...existing code for create employee...
-
   // Actualizar empleado
   const updateForm = document.getElementById("update-employee-form");
   if (updateForm) {
@@ -73,14 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Eliminar empleado
+  /* Evento de eliminacion utilizado para el formulario
   const deleteForm = document.getElementById("delete-employee-form");
   if (deleteForm) {
     deleteForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       await eliminarEmpleado();
     });
-  }
+  } */
 });
 
 // Actualizar empleado
@@ -117,14 +142,11 @@ async function actualizarEmpleado() {
   }
 }
 
-// Eliminar empleado
-async function eliminarEmpleado() {
-  const id = document.getElementById("delete-id").value.trim();
-
-  if (!id) {
-    alert("Por favor ingresa la ID del empleado a eliminar.");
-    return;
-  }
+async function eliminarEmpleado(id) {
+  // if (!id) {
+  //   alert("Por favor ingresa la ID del empleado a eliminar.");
+  //   return;
+  // }
 
   try {
     const response = await fetch(`http://localhost:3000/employee/${id}`, {
