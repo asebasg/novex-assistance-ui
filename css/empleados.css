@@ -167,6 +167,46 @@ tr:nth-child(even) {
   background-color: #fafafa;
 }
 
+.btn-edit {
+  color: white;
+  background: #579690;
+  border: 1px solid #579690;
+  border-radius: 4px;
+  padding: 0.3rem;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-edit:hover {
+  color: white;
+  background-color: #3da89e;
+  border: 1px solid #3da89e;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-delete {
+  color: white;
+  background-color: rgba(219, 18, 18, 0.801);
+  border: 1px solid rgba(219, 18, 18, 0.801);
+  border-radius: 4px;
+  padding: 0.3rem;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-delete:hover {
+  color: white;
+  background-color: rgba(214, 48, 48, 0.801);
+  border: 1px solid rgba(214, 48, 48, 0.801);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+
+/* Actualizar empleados */
 .actualizar-empleados {
   display: block;
   background-color: #f8f8f8;
@@ -175,6 +215,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 
+/* Eliminar empleados */
 .eliminar-empleados {
   display: block;
   background-color: #f8f8f8;
