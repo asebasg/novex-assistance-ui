@@ -54,12 +54,13 @@ async function obtenerEmpleados() {
             <td>${employee.name}</td>
             <td>${employee.document}</td>
             <td>${employee.note}</td>
-            <td><button class="btn-edit">Editar empleado</button><button class="btn-delete" data-id="${employee.id}">Eliminar empleado</button></td>
+            <td><button class="btn-edit" data-id="${employee.id}">Editar empleado</button><button class="btn-delete" data-id="${employee.id}">Eliminar empleado</button></td>
             
             </tr>`
           )
           .join("");
       // Asociar eventos a los botones eliminar después de renderizar la tabla
+      editarEmpleadoBoton();
       eliminarEmpleadoBoton();
     } catch (error) {
       console.error(error);
@@ -68,6 +69,20 @@ async function obtenerEmpleados() {
       employeeTable.style.backgroundColor = "rgba(220, 53, 70, 0.4)";
     }
   }
+}
+
+// Asociar eventos al boton editar
+function editarEmpleadoBoton() {
+  const btnEdit = document.querySelectorAll(".btn-edit");
+  btnEdit.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      if (btnEdit) {
+        // Redirigir a editar-empleado.html con ID de empleado como parámetro de consulta
+        window.location.href = `./editar-empleado.html?id=${id}`;
+      }
+    });
+  });
 }
 
 // Asociar eventos al boton de eliminar
@@ -139,6 +154,8 @@ async function actualizarEmpleado() {
     alert("Empleado actualizado con éxito");
   } catch (error) {
     alert(error.message);
+  } finally {
+    window.location.href = 'empleados.html';
   }
 }
 
