@@ -89,59 +89,6 @@ h1 {
   color: #2d3e50;
 }
 
-h2 {
-  display: flex;
-  justify-content: flex-start;
-  font-weight: bold;
-  color: #2d3e50;
-}
-
-.return-items {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 3rem;
-}
-
-.return-btn {
-  display: flex;
-  justify-content: flex-end;
-  background: #579690;
-  border: 1px solid #579690;
-  border-radius: 4px;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 10px;
-}
-
-.return-btn:hover {
-  cursor: pointer;
-  background-color: #3da89e;
-  border: 1px solid #3da89e;
-  transition: all 0.5s ease;
-}
-
-.home-btn {
-  display: flex;
-  justify-content: flex-end;
-  background: #576396;
-  border: 1px solid #576396;
-  border-radius: 4px;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 10px;
-}
-
-.home-btn:hover {
-  cursor: pointer;
-  background-color: #606eaf;
-  border: 1px solid #606eaf;
-  transition: all 0.5s ease;
-}
-
 #name {
   display: flex;
   flex: 1;
