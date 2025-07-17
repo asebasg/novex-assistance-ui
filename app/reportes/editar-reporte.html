@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Reportes</title>
+    <link rel="stylesheet" href="../../css/reportes.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../../"><strong>Novex Assistance</strong></a>
+        </div>
+        <div class="links">
+            <a href="../empleados/empleados.html">Empleados</a>
+            <a href="../app/asistencias.html">Asistencias</a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <h1 class="title">Gestión de Reportes</h1>
+        <div class="return-items" onclick="window.location.href='./reportes.html'">
+            <button class="return-btn">
+                Volver a reportes
+            </button>
+        </div>
+        <div class="actualizar-reportes">
+            <h2>Actualizar reportes</h2>
+            <p>Para actualizar un reporte, ingresa los nuevos datos en los siguientes campos y presiona el botón
+                correspondiente.</p>
+            <form id="update-report-form">
+                <div class="form-labels">
+                    <label for="update-id">ID del reporte</label>
+                    <input type="number" id="update-id" name="update-id" required min="1" placeholder="ID del reporte">
+                </div>
+                <div class="form-labels">
+                    <label for="update-title">Título</label>
+                    <input type="text" id="update-title" name="update-title" placeholder="Nuevo título">
+                </div>
+                <div class="form-labels">
+                    <label for="update-description">Descripción</label>
+                    <textarea id="update-description" name="update-description"
+                        placeholder="Nueva descripción"></textarea>
+                </div>
+                <div class="form-labels">
+                    <label for="update-employeeId">ID Empleado</label>
+                    <input type="number" id="update-employeeId" name="update-employeeId" min="1"
+                        placeholder="Nuevo ID empleado">
+                </div>
+                <button type="submit" class="submit-button">Actualizar reporte</button>
+            </form>
+        </div>
+    </main>
+    <script src="../../js/reportes.js"></script>
+</body>
+</html>
