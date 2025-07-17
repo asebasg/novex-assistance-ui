@@ -6,21 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes de Asistencias</title>
     <!-- <link rel="stylesheet" href="../css/index.css"> -->
-    <link rel="stylesheet" href="../css/reportes.css">
+    <link rel="stylesheet" href="../../css/reportes.css">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="logo">
-            <a href="./"><strong>Novex Assistance</strong></a>
+            <a href="../../"><strong>Novex Assistance</strong></a>
         </div>
         <div class="links">
-            <a href="../app/empleados.html">Empleados</a>
+            <a href="../empleados/empleados.html">Empleados</a>
             <a href="../app/asistencias.html">Asistencias</a>
         </div>
     </nav>
     <main class="main-content">
         <h1 class="title">Gestión de Reportes</h1>
+        <div class="return-items">
+            <button class="return-btn" onclick="window.location.href='./editar-reporte.html'">
+                Editar reportes
+            </button>
+            <button class="home-btn" onclick="window.location.href='../../'">
+                Volver a inicio
+            </button> 
+        </div>
+        <div class="obtener-reportes">
+            <h2>Obtener todos los reportes</h2>
+            <p>Para obtener a todos los reportes, presiona el siguiente boton.</p>
+            <button class="submit-button" id="get-reports-btn">
+                Obtener reportes
+            </button>
+            <table id="reportTable">
+                <!-- Aqui se mostrarán los reportes desde el reportes.js -->
+            </table>
+        </div>
+        <hr>
         <div class="crear-reporte">
             <h2>Crear reporte</h2>
             <p>Para crear un reporte, llena el siguiente formulario</p>
@@ -43,18 +62,7 @@
             </form>
         </div>
 
-        <div class="obtener-reportes">
-            <h2>Obtener todos los reportes</h2>
-            <p>Para obtener a todos los reportes, presiona el siguiente boton.</p>
-            <button class="submit-button" id="get-reports-btn">
-                Obtener reportes
-            </button>
-            <table id="reportTable">
-                <!-- Aqui se mostrarán los reportes desde el reportes.js -->
-            </table>
-        </div>
-
-        <div class="actualizar-reportes">
+        <!-- <div class="actualizar-reportes">
             <h2>Actualizar reportes</h2>
             <p>Para actualizar un reporte, ingresa los nuevos datos en los siguientes campos y presiona el botón
                 correspondiente.</p>
@@ -79,9 +87,9 @@
                 </div>
                 <button type="submit" class="submit-button">Actualizar reporte</button>
             </form>
-        </div>
+        </div> -->
 
-        <div class="eliminar-reportes">
+        <!-- <div class="eliminar-reportes">
             <h2>Eliminar reportes</h2>
             <p>Para eliminar un reporte, ingresa la ID del reporte.</p>
             <p>Para conocer la ID del reporte solicitado, puedes mirarla en el apartado de obtener reporte.</p>
@@ -92,9 +100,9 @@
                 </div>
                 <button type="submit" class="submit-button">Eliminar reporte</button>
             </form>
-        </div>
+        </div> -->
     </main>
-    <script src="../js/reportes.js"></script>
+    <script src="../../js/reportes.js"></script>
     <footer>
         <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
     </footer>
