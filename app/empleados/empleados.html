@@ -19,47 +19,50 @@
             <a href="../asistencias.html">Asistencias</a>
         </div>
     </nav>
-    <main>
-        <h1 class="title">Gestión de Empleados</h1>
-        <div class="return-items" onclick="window.location.href='./editar-empleado.html'">
-            <button class="return-btn">
-                Editar empleados
-            </button>
-        </div>
-        <div class="obtener-empleados">
-            <h2>Obtener todos los empleados</h2>
-            <p>Para obtener a todos los empleados, presiona el siguiente boton.</p>
-            <button class="submit-button" onclick="obtenerEmpleados()">
-                Obtener empleados
-            </button>
-            <table id="employeeTable">
-                <!-- Aqui se mostrarán los empleados desde el empleado.js -->
-            </table>
-        </div>
-        <hr>
-        <div class="crear-empleado">
-            <h2>Crear empleado</h2>
-            <p>Para crear un empleado, llena el siguiente formulario</p>
-            <form action="" id="create-employee">
-                <div class="form-labels">
-                    <label for="name" class="name">Nombre</label>
-                    <input type="text" name="name" id="name" placeholder="Ingresa el nombre del trabajador" required>
-                </div>
-                <div class="form-labels">
-                    <label for="document" class="document">Documento</label>
-                    <input type="number" name="document" id="document" placeholder="Ingresa el documento del trabajador"
-                        min="1" max="9999999999" required>
-                </div>
-                <div class="form-labels">
-                    <label for="note" class="note">Nota (opcional)</label>
-                    <textarea name="note" id="note" placeholder="Ingresa una nota para el trabajador"
-                        rows="3"></textarea>
-                </div>
-                <button type="submit" class="submit-button">Crear empleado</button>
-            </form>
-        </div>
 
-        <!-- <div class="eliminar-empleados">
+    <body>
+        <main>
+            <h1 class="title">Gestión de Empleados</h1>
+            <div class="return-items" onclick="window.location.href='./editar-empleado.html'">
+                <button class="return-btn">
+                    Editar empleados
+                </button>
+            </div>
+            <div class="obtener-empleados">
+                <h2>Obtener todos los empleados</h2>
+                <p>Para obtener a todos los empleados, presiona el siguiente boton.</p>
+                <button class="submit-button" onclick="obtenerEmpleados()">
+                    Obtener empleados
+                </button>
+                <table id="employeeTable">
+                    <!-- Aqui se mostrarán los empleados desde el empleado.js -->
+                </table>
+            </div>
+            <hr>
+            <div class="crear-empleado">
+                <h2>Crear empleado</h2>
+                <p>Para crear un empleado, llena el siguiente formulario</p>
+                <form action="" id="create-employee">
+                    <div class="form-labels">
+                        <label for="name" class="name">Nombre</label>
+                        <input type="text" name="name" id="name" placeholder="Ingresa el nombre del trabajador"
+                            required>
+                    </div>
+                    <div class="form-labels">
+                        <label for="document" class="document">Documento</label>
+                        <input type="number" name="document" id="document"
+                            placeholder="Ingresa el documento del trabajador" min="1" max="9999999999" required>
+                    </div>
+                    <div class="form-labels">
+                        <label for="note" class="note">Nota (opcional)</label>
+                        <textarea name="note" id="note" placeholder="Ingresa una nota para el trabajador"
+                            rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Crear empleado</button>
+                </form>
+            </div>
+
+            <!-- <div class="eliminar-empleados">
             <h2>Eliminar empleados</h2>
             <p>Para eliminar un empleado, ingresa la ID del empleado.</p>
             <p>Para conocer la ID del empleado solicitado, puedes mirarla en el apartado de obtener empleado.</p>
@@ -74,8 +77,10 @@
                 Eliminar empleado
             </button>
         </div> -->
-    </main>
-    <script src="../../js/empleados.js"></script>
+        </main>
+        <script src="../../js/empleados.js"></script>
+    </body>
+
     <footer>
         <p>&copy; Novex Assistance 2025 - Todos los derechos reservados</p>
     </footer>
