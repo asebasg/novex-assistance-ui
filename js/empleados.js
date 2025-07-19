@@ -54,7 +54,7 @@ async function obtenerEmpleados() {
             <td>${employee.name}</td>
             <td>${employee.document}</td>
             <td>${employee.note}</td>
-            <td><button class="btn-edit" data-id="${employee.id}">Editar empleado</button><button class="btn-delete" data-id="${employee.id}">Eliminar empleado</button></td>
+            <td><button class="btn-edit" data-id="${employee.id}">Editar empleado</button><button class="btn-delete" data-id="${employee.id}">Eliminar empleado</button><button class="btn-report" data-id="${employee.id}">Crear reporte</button></td>
             
             </tr>`
           )
@@ -62,6 +62,7 @@ async function obtenerEmpleados() {
       // Asociar eventos a los botones eliminar después de renderizar la tabla
       editarEmpleadoBoton();
       eliminarEmpleadoBoton();
+      crearReporteBoton();
     } catch (error) {
       console.error(error);
       employeeTable.innerHTML =
@@ -97,6 +98,18 @@ function eliminarEmpleadoBoton() {
         console.log("Empleado eliminado con exito");
       } else {
         alert("Eliminacion cancelada");
+      }
+    });
+  });
+}
+
+function crearReporteBoton() {
+  const btnReport = document.querySelectorAll(".btn-report");
+  btnReport.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-id");
+      if (btnReport) {
+        window.location.href = `../reportes/reportes.html?id=${id}`;
       }
     });
   });
@@ -155,7 +168,7 @@ async function actualizarEmpleado() {
   } catch (error) {
     alert(error.message);
   } finally {
-    window.location.href = 'empleados.html';
+    window.location.href = "empleados.html";
   }
 }
 
@@ -175,5 +188,30 @@ async function eliminarEmpleado(id) {
     alert("Empleado eliminado con éxito");
   } catch (error) {
     alert(error.message);
+  }
+}
+
+// Enviar la ID del empleado para crear un reporte
+async function crearReporte() {
+  const id = document.getElementById("data-id");
+//const id = document.getElementById("data-id").value.trim();
+  if (!id) {
+    alert("Por favor ingresa la ID del empleado para crear el reporte.");
+    return;
+  }
+  try {
+    const response = await fetch(`http://localhost:3000/employee/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Error al redirigir al formulario");
+    }
+  } catch (error) {
+    alert(error.message);
+  } finally {
+    window.location.href = `../reportes/reportes.html?id=${id}`;
   }
 }
