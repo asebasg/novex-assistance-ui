@@ -79,15 +79,20 @@ async function obtenerReportes() {
       const res = await fetch("http://localhost:3000/report");
       const data = await res.json();
       reportTable.innerHTML =
-        "<tr><th>ID</th><th>Título</th><th>Descripción</th><th>Fecha</th><th>Empleado ID</th></tr>" +
+        "<tr><th>ID</th><th>Título</th><th>Descripción</th><th>Fecha</th><th>Nombre del empleado</th><th>ID del empleado</th><th>Acciones</th></tr>" +
         data
           .map(
             (report) =>
-              `<tr><td>${report.id}</td><td>${report.title}</td><td>${
-                report.description
-              }</td><td>${new Date(
-                report.createdAt
-              ).toLocaleString()}</td><td>${report.employeeId}</td></tr>`
+              `
+            <tr>
+            <td>${report.id}</td>
+            <td>${report.title}</td>
+            <td>${report.description}</td>
+            <td>${new Date(report.createdAt).toLocaleString()}</td>
+            <td></td>
+            <td>${report.employeeId}</td>
+            <td><button class="btn-edit" data-id="">Editar reporte</button><button class="btn-delete" data-id="">Eliminar reporte</button></td>
+              </tr>`
           )
           .join("");
     } catch (error) {
